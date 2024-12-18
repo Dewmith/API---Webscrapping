@@ -9,3 +9,5 @@ TP2 and  3\services\epf-flower-data-science\src\config
 
 # Ignore all the .json files
 *.json
+
+*.joblib
