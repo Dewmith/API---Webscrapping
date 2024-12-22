@@ -22,4 +22,4 @@ async def redirect_to_docs():
 app.include_router(data.router, prefix="/api/data", tags=["Dataset"])
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", debug=True, reload=True, port=8080)
+    uvicorn.run("main:app", reload=True, port=8000)

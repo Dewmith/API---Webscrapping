@@ -256,3 +256,5 @@ async def predict(features: dict):
 
     except Exception as e:
         return {"error": str(e)}
+    
+
