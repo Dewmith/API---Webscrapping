@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import uvicorn
 from fastapi.responses import RedirectResponse
 from src.app import get_application
-from src.api.routes import data
+from src.api.routes import data, parameters 
 
 # Set the path to kaggle.json explicitly (assuming it's in the same folder as main.py)
 kaggle_json_path = os.path.join(os.path.dirname(__file__), "kaggle.json")
@@ -20,6 +20,9 @@ async def redirect_to_docs():
 
 # Include the data route with a prefix
 app.include_router(data.router, prefix="/api/data", tags=["Dataset"])
+
+# Include the parameters route with a prefix
+app.include_router(parameters.router, prefix="/api/parameters", tags=["Parameters"])  # Add this line
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True, port=8000)
